@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Something
+      run: mkdir download
+    - name: Pull the Docker image
+      run: docker pull ubuntu:latest
+    - name: save to docker file
+      run: docker save -o ubuntu.docker
+    - name: Upload archive
+      uses: actions/upload-artifact@v3
+      with:
+        name: download.zip
+        path: download/
+
