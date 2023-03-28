@@ -16,7 +16,7 @@ jobs:
     - name: Something
       run: mkdir download
     - name: Pull the Docker image
-      run: docker pull ubuntu:latest
+      run: docker pull --platform linux/amd64 ubuntu:latest
     - name: save to docker file
       run: docker save -o download/ubuntu.docker ubuntu
     - name: Upload archive
