@@ -16,9 +16,9 @@ jobs:
     - name: Something
       run: mkdir download
     - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 ubuntu:latest
+      run: docker pull --platform linux/amd64 debian:stable-slim
     - name: save to docker file
-      run: docker save -o download/ubuntu.docker ubuntu
+      run: docker save -o download/debian-slim.docker debian:stable-slim
     - name: Upload archive
       uses: actions/upload-artifact@v3
       with:
