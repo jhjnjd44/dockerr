@@ -18,7 +18,7 @@ jobs:
     - name: Pull the Docker image
       run: docker pull ubuntu:latest
     - name: save to docker file
-      run: docker save -o ubuntu.docker
+      run: docker save -o ubuntu.docker ubuntu
     - name: Upload archive
       uses: actions/upload-artifact@v3
       with:
