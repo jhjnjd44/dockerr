@@ -16,25 +16,9 @@ jobs:
     - name: Something
       run: mkdir download
     - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 penpotapp/backend
+      run: docker pull --platform linux/amd64 ubuntu
     - name: save to docker file
-      run: docker save -o download/penpotapp-backend.docker penpotapp/backend
-    - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 penpotapp/frontend
-    - name: save to docker file
-      run: docker save -o download/penpotapp-frontend.docker penpotapp/frontend
-    - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 penpotapp/exporter
-    - name: save to docker file
-      run: docker save -o download/penpotapp-exporter.docker penpotapp/exporter
-    - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 postgres:15
-    - name: save to docker file
-      run: docker save -o download/postgres.docker postgres:15
-    - name: Pull the Docker image
-      run: docker pull --platform linux/amd64 redis:7
-    - name: save to docker file
-      run: docker save -o download/redis.docker redis:7
+      run: docker save -o download/ubuntu.docker ubuntu
     - name: Upload archive
       uses: actions/upload-artifact@v3
       with:
