@@ -18,7 +18,7 @@ jobs:
     - name: Pull the Docker image
       run: docker pull fossforreal/socks5balancerasio:latest
     - name: save to docker file
-      run: docker save -o download/socks5balancerasio.docker sfossforreal/ocks5balancerasio:latest
+      run: docker save -o download/socks5balancerasio.docker fossforreal/ocks5balancerasio:latest
     - name: Upload archive
       uses: actions/upload-artifact@v3
       with:
