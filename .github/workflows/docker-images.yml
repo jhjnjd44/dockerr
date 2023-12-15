@@ -16,9 +16,9 @@ jobs:
     - name: Something
       run: mkdir download
     - name: Pull the Docker image
-      run: docker pull freshrss/freshrss:latest
+      run: docker pull  docker.io/library/ubuntu:22.04
     - name: save to docker file
-      run: docker save -o download/freshrss.docker freshrss/freshrss:latest
+      run: docker save -o download/ubuntu2204.docker  docker.io/library/ubuntu:22.04
     - name: Upload archive
       uses: actions/upload-artifact@v3
       with:
